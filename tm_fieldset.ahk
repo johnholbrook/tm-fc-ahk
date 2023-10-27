@@ -66,7 +66,9 @@ class tm_fieldset {
         ControlGetText, field_state, Static4, %fs_name%
         ControlGetText, field_name, ComboBox1, %fs_name%
 
-        result := {match_num: match_num, saved_match: saved_match, time_remaining: time_remaining, field_state: field_state, field_name: field_name}
+        result := {match_num: match_num, saved_match: saved_match, time_remaining: time_remaining, field_state: (field_state == "") ? "DISABLED" : field_state, field_name: field_name}
+
+        ; m(result)
 
         return result
     }
