@@ -1,5 +1,8 @@
 #Include, tm_fieldset.ahk
-#Include, stdio.ahk
+
+Stdout(text){
+    FileAppend, %text%`n, *
+}
 
 ; Read name of field set from command-line arguments, or pick default value if not specified
 argument_count := %0%
@@ -28,10 +31,10 @@ Loop {
         fs_state := new_state
 
         if (fs_state.match_num != old_state.match_num){
-            Stdout(Format("active_match :: {}", fs_state.match_num))
+            Stdout(Format("match_on_field :: {}", fs_state.match_num))
         }
         if (fs_state.saved_match != old_state.saved_match){
-            Stdout(Format("displayed_score :: {}", fs_state.saved_match))
+            Stdout(Format("saved_match :: {}", fs_state.saved_match))
         }
         if (fs_state.time_remaining != old_state.time_remaining){
             Stdout(Format("time_remaining :: {}", fs_state.time_remaining))
