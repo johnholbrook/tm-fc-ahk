@@ -1,5 +1,3 @@
-#Include, helpers.ahk
-
 class tm_fieldset {
     __New(name){
         this.name := name
