@@ -3,7 +3,8 @@
 
 ; Read name of field set from command-line arguments, or pick default value if not specified
 argument_count := %0%
-fs_name := (argument_count > 0) ? %1% : "Match Field Set #1"
+; MsgBox, %argument_count%
+fs_name := (argument_count > 0) ? argument_count : "Match Field Set #1"
 
 ; initialize TM fieldset object
 tm_fs := new tm_fieldset(fs_name)
