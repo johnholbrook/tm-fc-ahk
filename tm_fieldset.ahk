@@ -8,7 +8,7 @@ class tm_fieldset {
     ; Open the field set control window if it isn't already (necessary for all the functionality of this class to work)
     _force_window_open(){
         if (!WinExist("VEX Tournament Manager")){
-            MsgBox, ERROR: TM does not appear to be open.
+            ; MsgBox, ERROR: TM does not appear to be open.
             return 0
         }
         if (!WinExist(this.name)){
