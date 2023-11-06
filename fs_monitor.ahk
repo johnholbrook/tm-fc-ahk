@@ -4,6 +4,10 @@ Stdout(text){
     FileAppend, %text%`n, *
 }
 
+Stderr(text){
+    FileAppend, %text%`n, **
+}
+
 ; Read name of field set from command-line arguments, or pick default value if not specified
 argument_count := %0%
 ; MsgBox, %argument_count%
@@ -23,7 +27,7 @@ Loop {
 
     new_state := tm_fs.get_state()
     if (new_state == -1){
-        Stdout("TM doesn't appear to be running. Trying again in 10 seconds...")
+        Stderr("TM doesn't appear to be running. Trying again in 10 seconds...")
         Sleep, 10000
     }
     else{
